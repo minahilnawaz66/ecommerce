@@ -48,12 +48,12 @@ export default function NavBar() {
 					<path d="M9 11.004H10" stroke="#2D2B2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 					<path d="M14 11.004H15" stroke="#2D2B2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 				</svg>
-			<div className="absolute top-[-10px] right-[-10px] bg-red-500 w-[20px] h-[20px] rounded-full text-white text-[14px] grid place-items-center">
+			<div className="absolute top-[-10px] right-[-10px] bg-purple-500 w-[20px] h-[20px] rounded-full text-white text-[14px] grid place-items-center">
                 {cartCount}
 			</div>
 		</span>
 		</ul>
-		<div className="flex items-center gap-2">
+		<div className="flex items-center">
 			{username !== "" ? (
 				<div>Welcome Minahil :)</div>
 			) : (
@@ -71,14 +71,12 @@ export default function NavBar() {
 				</div>
 			</div>
 			) : (
-			<div>
-				<span
-					className="hover:underline cursor-pointer text-lg"
-					onClick={() => dispatch(updateModal(true))}
-				>
-					Login
-				</span>
-			</div>
+			<span
+				className="hover:underline cursor-pointer text-lg"
+				onClick={() => dispatch(updateModal(true))}
+			>
+				Login
+			</span>
 			)}
 			</div>
             </div>

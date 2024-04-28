@@ -35,13 +35,13 @@ const ProductCard: FC<Product> = ({
       <div className="text-center border-b border-gray-200">
           <img src={thumbnail} alt={title} className="inline-block h-60" />
       </div>
-      <div className="px-8 pt-4">
+      <div className="px-8 pt-4 bg-gray-100">
         <p className="text-gray-500 text-[14px] font-medium">{category}</p>
         <div className="font-semibold">
           {title}
         </div>
       </div>
-      <div className="flex items-center justify-between px-8 pb-4">
+      <div className="bg-gray-100 flex items-center justify-between px-8 pb-4">
 		$44.90
         <button
           type="button"

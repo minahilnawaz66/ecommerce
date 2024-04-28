@@ -13,6 +13,3 @@ export const initialUserValue: User = {
 }
 
 export const UserContext = createContext(initialUserValue);
-
-// interface is definfing the user type
-// export type is you want to export the type of that object

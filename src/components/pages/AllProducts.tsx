@@ -30,7 +30,7 @@ const AllProducts = () => {
     <div className="container mx-auto min-h-[83vh] p-4">
       <div className="grid grid-cols-3 gap-1">
         <div className="col-span-3 space-y-4">
-          <div className="grid gap-3 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
+          <div className="grid grid-cols-4 gap-4">
             {currentProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
