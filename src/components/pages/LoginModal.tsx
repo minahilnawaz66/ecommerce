@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../core/hooks";
-import { doLogin , updateModal } from "../../core/Slices/authSlice";
+import { Login , updateModal } from "../../core/Slices/authSlice";
 
 const LoginModal = () => {
   const [username, setUsername] = useState("");
@@ -10,7 +10,7 @@ const LoginModal = () => {
 
   const submitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(doLogin({ username, password }));
+    dispatch(Login({ username, password }));
   };
 
   if (open) {

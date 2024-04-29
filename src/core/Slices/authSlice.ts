@@ -1,15 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthSlice } from "../../components/pages/AuthSlice";
-
 interface LoginProps {
   username: string;
   password: string;
 }
 
 const initialState: AuthSlice = {
-  isLoggedIn:
-    localStorage.getItem("username") !== null &&
-    localStorage.getItem("username") !== undefined &&
+  isLoginIn:
     localStorage.getItem("username") !== "",
   modalOpen: false,
   username: localStorage.getItem("username") ?? "",
@@ -22,7 +19,7 @@ export const authSlice = createSlice({
     updateModal: (state, action: PayloadAction<boolean>) => {
       return { ...state, modalOpen: action.payload };
     },
-    doLogin: (state, action: PayloadAction<LoginProps>) => {
+    Login: (state, action: PayloadAction<LoginProps>) => {
       if (
         action.payload.username === "minahil" &&
         action.payload.password === "Password@123"
@@ -32,18 +29,18 @@ export const authSlice = createSlice({
           ...state,
           username: "minahil",
           modalOpen: false,
-          isLoggedIn: true,
+          isLoginIn: true,
         };
       } else {
         return state;
       }
     },
-    doLogout: (state) => {
+    Logout: (state) => {
       localStorage.removeItem("username");
-      return { ...state, username: "", isLoggedIn: false };
+      return { ...state, username: "", isLoginIn: false };
     },
   },
 });
 
-export const { updateModal, doLogin, doLogout } = authSlice.actions;
+export const { updateModal, Login, Logout } = authSlice.actions;
 export default authSlice.reducer;

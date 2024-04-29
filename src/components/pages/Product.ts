@@ -3,4 +3,5 @@ export interface Product {
 	title: string;
 	thumbnail?: string;
 	category: string;
+	price: number;
 }

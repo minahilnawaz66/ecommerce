@@ -3,10 +3,10 @@ import { useAppSelector, useAppDispatch } from "../../core/hooks";
 
 const useAuth = () => {
   const dispatch = useAppDispatch();
-  const isLoggedIn = useAppSelector((state) => state.authReducer.isLoggedIn);
+  const isLoginIn = useAppSelector((state) => state.authReducer.isLoginIn);
 
   const requireAuth = (action: () => void) => {
-    if (!isLoggedIn) {
+    if (!isLoginIn) {
       dispatch(updateModal(true));
     } else {
       action();

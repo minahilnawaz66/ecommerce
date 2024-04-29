@@ -9,7 +9,8 @@ const ProductCard: FC<Product> = ({
   id,
   thumbnail,
   title,
-  category
+  category,
+  price,
 }) => {
   const dispatch = useAppDispatch();
   const { requireAuth } = useAuth();
@@ -22,6 +23,7 @@ const ProductCard: FC<Product> = ({
           title,
           category,
           thumbnail,
+          price,
         })
       );
       toast.success("product added to cart successfully", {
@@ -42,7 +44,7 @@ const ProductCard: FC<Product> = ({
         </div>
       </div>
       <div className="bg-gray-100 flex items-center justify-between px-8 pb-4">
-		$44.90
+      ${price}
         <button
           type="button"
           className="flex items-center space-x-2 text-white py-2 px-4 rounded bg-purple-500"
